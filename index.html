@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>function httpGet(theUrl)
+{
+    var xmlHttp = new XMLHttpRequest();
+    xmlHttp.open( "GET", theUrl, false ); // false for synchronous request
+    xmlHttp.send( null );
+    return xmlHttp.responseText;
+}
+
+var bob = httpGet("https://clouddata.scratch.mit.edu/logs?projectid=698120941&limit=100&offset=0");
+
+document.getElementById("Whopressed").innerHTML = "unavaible";
+document.getElementById("Whopressedsecond").innerHTML = "unavaible";
+document.getElementById("Whopressedthird").innerHTML = "unavaible";
+</script>
+<title>Who Pressed</title>
+</head>
+<body style="font-family: Impact, sans-serif;
+color: #CE5937;">
+<h1>Who Pressed?</h1>
+<p>Heres The Person Who Pressed First</p>
+<p id="Whopressed"></p>
+<p>Here Are The Others</p>
+  <p id="Whopressedsecond"></p>
+  <p id="Whopressedthird"></p>
+  
+<a href="https://scratch.mit.edu/projects/698120941/">Project</a>
+</body>
+</html>
